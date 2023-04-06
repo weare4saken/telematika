@@ -9,7 +9,6 @@ import java.time.Instant;
 @Repository
 public interface TokenRepository extends JpaRepository<Token, String> {
 
-
     void deleteAllByExpiredDateIsBefore(Instant now);
 
 }

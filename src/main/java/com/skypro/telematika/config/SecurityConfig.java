@@ -34,6 +34,7 @@ public class SecurityConfig {
                 .and()
                 .addFilterBefore(uuidAuthenticationFilter, ExceptionTranslationFilter.class)
                 .authorizeRequests()
+                .antMatchers("/indications/{serial}").permitAll()
                 .anyRequest().authenticated();
 
         return httpSecurity.build();

@@ -1,5 +1,6 @@
 package com.skypro.telematika.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +18,9 @@ public class Token {
 
     @Id
     private String uuid;
+    @JsonIgnore
     private Instant expiredDate;
+    @JsonIgnore
     @ManyToOne
     private SerialSecret serialSecret;
 
